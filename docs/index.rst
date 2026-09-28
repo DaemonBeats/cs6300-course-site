@@ -57,6 +57,7 @@ If you are looking for the old Code page, you can find it `here <https://f1tenth
    setup/realsense_ros
    setup/slam
    setup/nav2
+   setup/gym_ros_setup
 
 .. toctree::
    :maxdepth: 2
