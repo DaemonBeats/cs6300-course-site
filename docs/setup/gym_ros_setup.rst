@@ -23,11 +23,24 @@ Requirements
 Windows setup
 -------------
 
+Here is the setup video to follow along with, or you can just follow along with the text commands:
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 1.5em;">
+      <video width="600" height="315" controls>
+         <source src="../_static/videos/WindowsEditedSetup.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   </div>
+
 1️⃣ **Install Docker**
 
 We will start by downloading Docker Desktop and getting it running. You can download Docker Desktop from the official website: https://docs.docker.com/desktop/setup/install/windows-install/
 
 There are a few videos online that can help with the Docker installation process. Here's one: https://www.youtube.com/watch?v=TMx4ydYKCHw
+
+Sign into the docker app, using any account is fine. Github or google accounts are the most convenient to use.
 
 *Important Note:* Things may not work starting from step 3 in the Windows section if you do not run the Docker Desktop app before running the commands in step 3. Make sure to run the Docker Desktop app first, every time you start your computer and want to run the simulator.
 
@@ -107,10 +120,21 @@ If that's what you see last, you're good to open your browser and go to this lin
 
 If prompted by your browser to allow foxglove to interact with other apps, click "Allow". You should see a page that says "foxglove studio" and prompts you to sign in. Sign in with the account you created earlier.
 
-The sim should now be running in your browser. Go to the ``Simulator Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
+The sim should now be running in your browser. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
 Linux setup
 -----------
+
+Here is the setup video to follow along with, or you can just follow along with the text commands:
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 1.5em;">
+      <video width="600" height="315" controls>
+         <source src="../_static/videos/WindowsEditedSetup.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   </div>
 
 1️⃣ **Install Docker**
 
@@ -217,8 +241,16 @@ If this is what you see last, you're good to open your browser and go to this li
 
    https://app.foxglove.dev/?ds=foxglove-websocket&ds.url=ws://localhost:8765
 
-The sim should appear as running. Go to the ``Simulator Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
+The sim should appear as running. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
 MacOS setup
 -----------
+
+
+
+
+Simulator Window Setup
+-----------------------
+
+This section will show you how to set up the simulator windows so that they are easy to view and use. The steps are the same for all OSes.
 
