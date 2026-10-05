@@ -138,28 +138,46 @@ Here is the setup video to follow along with, or you can just follow along with 
 
 1️⃣ **Install Docker**
 
-We will begin by installing Docker. To ensure that no older version of Docker are installed that may interfere with getting the sim running, we will start by removing any older versions of Docker. Open a terminal and run the following commands:
+We will begin by installing Docker. To ensure that no older version of Docker are installed that may interfere with getting the sim running, we will start by removing any older versions of Docker. If at any point your terminal asks if you'd like to continue with Y/N, answer Y. Open a terminal and run the following commands:
 
 .. code-block:: bash
 
    sudo apt remove docker.io docker-doc docker-compose podman-docker containerd runc
 
+.. code-block:: bash
+
    sudo apt update
+
+.. code-block:: bash
 
    sudo apt install lsb-release
 
-   sudo apt install ca-certificates curl gnupg (yes when prompted)
+.. code-block:: bash
+
+   sudo apt install ca-certificates curl gnupg
+
+.. code-block:: bash
 
    sudo install -m 0755 -d /etc/apt/keyrings
 
-   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg (this command may not work on the school wifi network, so if not, try a different one)
+.. code-block:: bash
+
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+The command above may not work on the school wifi network, so if not, try a different one. Then continue:
+
+.. code-block:: bash
 
    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
 
+.. code-block:: bash
+
    sudo apt update
 
-   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin (yes when prompted)
+.. code-block:: bash
+
+   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 Finish the installation by running the following command:
 
@@ -182,12 +200,25 @@ Next we'll get git running and set up the repo. Run the following commands in th
 .. code-block:: bash
 
    sudo apt update
+
+.. code-block:: bash
+
    sudo apt install git
 
+.. code-block:: bash
+
    git clone https://github.com/f1tenth/f1tenth_gym_ros.git
+
+.. code-block:: bash
+
    cd f1tenth_gym_ros
 
+.. code-block:: bash
+
    git checkout dev-humble
+
+.. code-block:: bash
+
    git status
 
 You should now be on the dev-humble branch in the repo's new directory. This is very important, so if git status returns a different branch, make sure you get swapped before continuing.
@@ -235,13 +266,13 @@ The output of that command should end with text that looks like this:
 
    Advertising new channel ## for topic "/cmd_vel"
 
-If this is what you see last, you're good to open your browser and go to this link, keeping the terminal open:
+If the above is what you see last, you're good to open your browser and go to this link, keeping the terminal open:
 
 .. code-block:: text
 
    https://app.foxglove.dev/?ds=foxglove-websocket&ds.url=ws://localhost:8765
 
-The sim should appear as running. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
+The sim should appear as running. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
 MacOS setup
 -----------
