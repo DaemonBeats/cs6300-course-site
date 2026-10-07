@@ -28,10 +28,15 @@ Here is the setup video to follow along with, or you can just follow along with 
 .. raw:: html
 
    <div style="text-align: center; margin-bottom: 1.5em;">
-      <video width="600" height="315" controls>
-         <source src="../_static/videos/WindowsEditedSetup.mp4" type="video/mp4">
-         Your browser does not support the video tag.
-      </video>
+      <iframe
+         width="600"
+         height="315"
+         src="https://www.youtube.com/embed/GX5I2DO8IpY?si=DZhEwm83pDVm2XCh"
+         title="Windows gym_ros setup video"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen>
+      </iframe>
    </div>
 
 1️⃣ **Install Docker**
@@ -130,10 +135,15 @@ Here is the setup video to follow along with, or you can just follow along with 
 .. raw:: html
 
    <div style="text-align: center; margin-bottom: 1.5em;">
-      <video width="600" height="315" controls>
-         <source src="../_static/videos/LinuxSetupEdited.mp4" type="video/mp4">
-         Your browser does not support the video tag.
-      </video>
+      <iframe
+         width="600"
+         height="315"
+         src="https://www.youtube.com/embed/r5A3BQrK6tI?si=aC71iZm06El4Qzb3"
+         title="Linux gym_ros setup video"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen>
+      </iframe>
    </div>
 
 1️⃣ **Install Docker**
@@ -280,8 +290,6 @@ MacOS setup
 -----------
 
 
-
-
 Simulator Window Setup
 -----------------------
 
@@ -300,9 +308,14 @@ Some notes:
 .. raw:: html
 
    <div style="text-align: center; margin-bottom: 1.5em;">
-      <video width="600" height="315" controls>
-         <source src="../_static/videos/SimSetupEdited.mp4" type="video/mp4">
-         Your browser does not support the video tag.
-      </video>
+      <iframe
+         width="600"
+         height="315"
+         src="https://www.youtube.com/embed/SM8CmaQnWD8?si=kErBV1M-INOZP5iv"
+         title="Simulator View Windows Setup"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen>
+      </iframe>
    </div>
 
