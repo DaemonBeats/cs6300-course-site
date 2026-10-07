@@ -23,7 +23,7 @@ Requirements
 Windows setup
 -------------
 
-Here is the setup video to follow along with, or you can just follow along with the text commands:
+Here is the setup video to follow along with, or you can just follow along with the text commands. Note that some commands may take longer to resolve than in the video the first time you run them:
 
 .. raw:: html
 
@@ -125,13 +125,13 @@ The sim should now be running in your browser. Go to the ``Simulator Window Setu
 Linux setup
 -----------
 
-Here is the setup video to follow along with, or you can just follow along with the text commands:
+Here is the setup video to follow along with, or you can just follow along with the text commands. Note that some commands may take longer to resolve than in the video the first time you run them:
 
 .. raw:: html
 
    <div style="text-align: center; margin-bottom: 1.5em;">
       <video width="600" height="315" controls>
-         <source src="../_static/videos/WindowsEditedSetup.mp4" type="video/mp4">
+         <source src="../_static/videos/LinuxSetupEdited.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
    </div>
@@ -205,6 +205,8 @@ Next we'll get git running and set up the repo. Run the following commands in th
 
    sudo apt install git
 
+Before running the next command, navigate to the directory where you want the repository to be cloned to.
+
 .. code-block:: bash
 
    git clone https://github.com/f1tenth/f1tenth_gym_ros.git
@@ -230,17 +232,17 @@ If you're on dev-humble, run these commands to finish setting up the docker cont
 .. code-block:: bash
 
    docker compose up -d --build
-   
-The output of that command should end with text that looks like this:
-
-.. code-block:: text
-
-  ✔ Image f1tenth_gym_ros               Built				2.2s
-  ✔ Container f1tenth_gym_ros-sim-1     Started    	    4.0s
 
 .. note::
 
 	You will have to run this command every time you start your computer, otherwise the docker won't be running and the following steps won't work.
+
+The output of that command should end with text that looks like this:
+
+.. code-block:: text
+
+  ✔ Image f1tenth_gym_ros               Built		    2.2s
+  ✔ Container f1tenth_gym_ros-sim-1     Started    	    4.0s
 
 Once that's finished, run these commands:
 
@@ -284,4 +286,23 @@ Simulator Window Setup
 -----------------------
 
 This section will show you how to set up the simulator windows so that they are easy to view and use. The steps are the same for all OSes.
+
+Some notes:
+
+- I haven't actually used this simulator, and do not know how it's supposed to function. This will get you set up with the bare minimum view windows, but you may need to edit it further once you actually start using the sim.
+- The windows may be set up as desired upon initial setup (they were for me on Windows), but even so, ensure all of the settings are the same for each view window.
+- In order to get the settings for a view window on the left side, click on the view window you wish to see them for.
+- The first set of settings looked at in the video is the 3D view window.
+- The two windows on the right have the same name, but their variables in the series tab at the bottom of their settings are slightly different. The top window's series are named as /cmd_vel.linear.(x,y,z), whilst the bottom window's series are /cmd_vel.angular.(x,y,z) (linear vs angular). Make sure to select the correct one for each window.
+- If you do not have the 2 windows on the right and the 2 on the bottom, I show how to add/duplicate them in the video using the Split option. Then you must select the correct window type by clicking the 3 dots on the top right of the window, then click Change Panel, then select the one that matches its position in the video for each one.
+- If you have no bottom view windows at the beginning, make an additional copy of the right window, then drag it out and snap it to the bottom like how you would a browser/other application window, then duplicate it to the side (also shown in the video).
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 1.5em;">
+      <video width="600" height="315" controls>
+         <source src="../_static/videos/SimSetupEdited.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   </div>
 
