@@ -127,6 +127,14 @@ If prompted by your browser to allow foxglove to interact with other apps, click
 
 The sim should now be running in your browser. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
+
+.. code-block:: bash
+    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
+
 Linux setup
 -----------
 
@@ -286,12 +294,20 @@ If the above is what you see last, you're good to open your browser and go to th
 
 The sim should appear as running. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
+
+.. code-block:: bash
+    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
+
 MacOS setup
 -----------
 
 
 Simulator Window Setup
------------------------
+----------------------
 
 This section will show you how to set up the simulator windows so that they are easy to view and use. The steps are the same for all OSes.
 
