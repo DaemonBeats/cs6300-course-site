@@ -1,10 +1,12 @@
 _build/
+._build/
 __pycache__
 .DS_Store
 *.pyc
 .vscode/
 .claude/settings.local.json
 .vs/
+docs/weber_assignments/labs/lab6/lab6a_waypoint_logger/.git
 
 # Copilot local/cache/log files
 .copilot/
