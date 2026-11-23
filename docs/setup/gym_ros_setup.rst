@@ -86,6 +86,7 @@ It may take a few minutes, but the end of the command's output should look somet
 	✔ Container f1tenth_gym_ros-sim-1     Started    	    4.0s
 
 .. note::
+
 	You will have to run this command every time you start your computer, otherwise the docker won't be running and the following steps won't work.
 
 If you see the proper output, you can now enter the docker container by running the following command:
@@ -126,14 +127,6 @@ If that's what you see last, you're good to open your browser and go to this lin
 If prompted by your browser to allow foxglove to interact with other apps, click "Allow". You should see a page that says "foxglove studio" and prompts you to sign in. Sign in with the account you created earlier.
 
 The sim should now be running in your browser. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
-
-To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
-
-.. code-block:: bash
-    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
-A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
 
 Linux setup
 -----------
@@ -294,13 +287,6 @@ If the above is what you see last, you're good to open your browser and go to th
 
 The sim should appear as running. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
-To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
-
-.. code-block:: bash
-    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
-A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
 
 MacOS setup
 -----------
@@ -332,6 +318,7 @@ Once installed, open it and make sure it's running before continuing onward.
 Also ensure that git is installed with the following command:
 
 .. code-block:: bash
+
    xcode-select --install
 
 2️⃣ **Clone the repo**
@@ -339,6 +326,7 @@ Also ensure that git is installed with the following command:
 We will next clone the repo and swap to the dev-humble branch. Open a terminal and navigate to the directory where you want the repository to be cloned to. Then run the following commands:
 
 .. code-block:: bash
+
    git clone https://github.com/f1tenth/f1tenth_gym_ros.git
    cd f1tenth_gym_ros
    git checkout dev-humble
@@ -351,6 +339,7 @@ Git status should return that you are on the dev-humble branch. If not, make sur
 In the f1tenth_gym_ros directory, run the following command:
 
 .. code-block:: bash
+
    docker compose up -d --build
 
 .. note::
@@ -360,6 +349,7 @@ In the f1tenth_gym_ros directory, run the following command:
 It may take a few minutes to complete the above command the first time you run it on a device, but at the end of the output, you should see something like this:
 
 .. code-block:: text
+
   ✔ Image f1tenth_gym_ros               Built		    2.2s
   ✔ Container f1tenth_gym_ros-sim-1     Started    	    4.0s
 
@@ -368,6 +358,7 @@ It may take a few minutes to complete the above command the first time you run i
 Once you see the above output, enter the docker container by running the following commands:
 
 .. code-block:: bash
+
    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
    echo $ROS_DISTRO
    ls /opt/ros
@@ -377,29 +368,22 @@ After the first command above, your filepath should change to something like ``r
 We now launch the gym_ros environment with this command:
 
 .. code-block:: bash
+
    ros2 launch f1tenth_gym_ros gym_bridge_launch.py open_foxglove:=false
 
 After that's done, you should see output that ends with something like this:
 
 .. code-block:: text
+
    Advertising new channel ## for topic "/cmd_vel"
 
 If that's the case, you can now open your browser and go to this link, keeping the terminal open:
 
 .. code-block:: text
+
    https://app.foxglove.dev/?ds=foxglove-websocket&ds.url=ws://localhost:8765
 
 You should see the sim running in your browser. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
-
-To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
-
-.. code-block:: bash
-    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
-The first command will enter the docker container, once again changing your filepath to something like ``root@(numbers and letters):/sim_ws#``. The second command will run the teleop_twist_keyboard package, which allows you to control the sim with your keyboard. You will have to have this terminal focused in order to control the sim, so ensure that your sim window and terminal are set up in a way that allows you to view the sim and terminal at the same time.
-
-A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
 
 Simulator View Window Setup
 ----------------------
@@ -429,3 +413,16 @@ Some notes:
       </iframe>
    </div>
 
+How to Control the Car
+----------------------
+
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
+
+.. code-block:: bash
+
+   docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+The first command will enter the docker container, once again changing your filepath to something like ``root@(numbers and letters):/sim_ws#``. The second command will run the teleop_twist_keyboard package, which allows you to control the sim with your keyboard. You will have to have this terminal focused in order to control the sim, so ensure that your sim window and terminal are set up in a way that allows you to view the sim and terminal at the same time.
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
