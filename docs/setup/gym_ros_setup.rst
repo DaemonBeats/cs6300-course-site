@@ -106,7 +106,7 @@ To ensure that you're on the correct branch once more, run the following command
 
 4️⃣ **Launch the gym_ros environment**
 
-Both of those command should return "humble". If not, use the command "exit" and swap to the dev-humble branch, then follow the steps from that point again. Then, continue with this command:
+Both of those commands should return "humble". If not, use the command "exit" and swap to the dev-humble branch, then follow the steps from that point again. Then, continue with this command:
 
 .. code-block:: bash
 
@@ -116,7 +116,7 @@ You'll see more lines of output, eventually stopping with something like
 
 .. code-block:: text
 
-   Advertising new channel ## for topic "/cmd_vel"
+   Advertising new channel 18 for topic "/cmd_vel"
 
 If that's what you see last, you're good to open your browser and go to this link, keeping the terminal open:
 
@@ -127,6 +127,15 @@ If that's what you see last, you're good to open your browser and go to this lin
 If prompted by your browser to allow foxglove to interact with other apps, click "Allow". You should see a page that says "foxglove studio" and prompts you to sign in. Sign in with the account you created earlier.
 
 The sim should now be running in your browser. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
+
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following commands:
+
+.. code-block:: bash
+
+    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
 
 Linux setup
 -----------
@@ -287,6 +296,14 @@ If the above is what you see last, you're good to open your browser and go to th
 
 The sim should appear as running. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following commands:
+
+.. code-block:: bash
+
+    docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
 
 MacOS setup
 -----------
@@ -350,8 +367,8 @@ It may take a few minutes to complete the above command the first time you run i
 
 .. code-block:: text
 
-  ✔ Image f1tenth_gym_ros               Built		    2.2s
-  ✔ Container f1tenth_gym_ros-sim-1     Started    	    4.0s
+   ✔ Image f1tenth_gym_ros               Built              2.2s
+   ✔ Container f1tenth_gym_ros-sim-1     Started            4.0s
 
 4️⃣ **Launch the gym_ros environment**
 
@@ -385,8 +402,19 @@ If that's the case, you can now open your browser and go to this link, keeping t
 
 You should see the sim running in your browser. If foxglove asks you to allow it to do stuff, do so. Go to the ``Simulator View Window Setup`` section of this page to find the steps to ensure the sim windows are set up properly.
 
+To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following commands:
+
+.. code-block:: bash
+
+   docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+The first command will enter the docker container, once again changing your filepath to something like ``root@(numbers and letters):/sim_ws#``. The second command will run the teleop_twist_keyboard package, which allows you to control the sim with your keyboard. You will have to have this terminal focused in order to control the sim, so ensure that your sim window and terminal are set up in a way that allows you to view the sim and terminal at the same time.
+
+A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
+
 Simulator View Window Setup
-----------------------
+---------------------------
 
 This section will show you how to set up the simulator windows so that they are easy to view and use. The steps are the same for all OSes.
 
@@ -413,16 +441,19 @@ Some notes:
       </iframe>
    </div>
 
-How to Control the Car
-----------------------
+Safety_pkg/Wall-Follow Visuals
+------------------------------
 
-To control the simulator, open a second terminal and navigate to the f1tenth_gym_ros directory. Then run the following command:
+Here's what safety-pkg program should look like (no inputs are being made by the user):
 
-.. code-block:: bash
+.. image:: ../img/SafetyPkgGIF.gif
+   :alt: Demo of safety_pkg
+   :width: 700px
+   :align: center
 
-   docker exec -it f1tenth_gym_ros-sim-1 /bin/bash
-   ros2 run teleop_twist_keyboard teleop_twist_keyboard
+Here's what the wall-follow program should look like (no inputs are being made by the user):
 
-The first command will enter the docker container, once again changing your filepath to something like ``root@(numbers and letters):/sim_ws#``. The second command will run the teleop_twist_keyboard package, which allows you to control the sim with your keyboard. You will have to have this terminal focused in order to control the sim, so ensure that your sim window and terminal are set up in a way that allows you to view the sim and terminal at the same time.
-
-A guide should appear in the terminal with the keys to use to control the sim. You can now use the keyboard to control the sim from this new terminal, and you should visually see the changes in the foxglove studio window.
+.. image:: ../img/WallFollowGIF.gif
+   :alt: Demo of wall-follow
+   :width: 700px
+   :align: center
